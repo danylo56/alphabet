@@ -7,6 +7,7 @@ function speak(text){
     let synth = window.speechSynthesis;
     var utterThis = new SpeechSynthesisUtterance(text);
     utterThis.rate = 0.7;
+    utterThis.lang = 'en-US'
     synth.speak(utterThis);
 }
 
