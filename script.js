@@ -1,7 +1,13 @@
-function play(letter){
-    let audio = new Audio('sounds/letter_' + letter + ".mp3");
-    audio.play();   
-    
+function play(letter, thing){
+    speak("Letter " + letter);
+    speak(thing)  
+}
+
+function speak(text){
+    let synth = window.speechSynthesis;
+    var utterThis = new SpeechSynthesisUtterance(text);
+    utterThis.rate = 0.7;
+    synth.speak(utterThis);
 }
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
